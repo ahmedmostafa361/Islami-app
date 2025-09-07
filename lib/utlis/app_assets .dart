@@ -16,6 +16,10 @@ class AppAssets {
   static const String iconRadio = 'assets/images/ic_radio.png';
   static const String iconSebha = 'assets/images/ic_sebha.png';
   static const String iconTime = 'assets/images/ic_time.png';
+  static const String imgRecent = 'assets/images/fanos.png';
+  static const String starImage = 'assets/images/star.png';
+  static const String suraBg = 'assets/images/surabg.png';
+
 
 }
 // quran Hadeth Sebha Radio Time
