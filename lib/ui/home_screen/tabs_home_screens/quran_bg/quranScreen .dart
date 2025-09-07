@@ -47,23 +47,30 @@ class Quranscreen extends StatelessWidget {
           SizedBox(height: height*0.015,),
           Text('Suras List',style: AppTextStyle.bold16White,),
           SizedBox(height: height*0.014,),
-          Expanded(
-            child: Container(
-              // color: Colors.green,
-              child: ListView.separated(
-                  padding: EdgeInsets.all(0),
-                  itemBuilder: (context, index) {
-                    return InkWell(onTap: () {
-                          Navigator.of(context).pushNamed(AppRoutes.suraScreenRoute,arguments: index);
-                    },
-                        child: Verticallistview(index: index,));
+          Expanded(ld: ListView.separated(
+              padding: EdgeInsets.all(0),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.of(
+                      context,
+                    ).pushNamed(AppRoutes.suraScreenRoute, arguments: index);
                   },
-                  separatorBuilder:(context, index) {
-                    return Divider(color: Colors.white,height: 2,thickness: 1,endIndent: width*0.11,indent: width*0.11,);
-                  },
-                  itemCount: SurasDetails.arabicAuranSuras.length),
+                  child: Verticallistview(index: index),
+                );
+              },
+              separatorBuilder: (context, index) {
+                return Divider(
+                  color: Colors.white,
+                  height: 2,
+                  thickness: 1,
+                  endIndent: width * 0.11,
+                  indent: width * 0.11,
+                );
+              },
+              itemCount: SurasDetails.arabicAuranSuras.length,
             ),
-          )
+          ))
         ],
       ),
     );

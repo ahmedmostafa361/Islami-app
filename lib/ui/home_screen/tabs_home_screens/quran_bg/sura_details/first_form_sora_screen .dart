@@ -2,36 +2,55 @@ import 'package:flutter/material.dart';
 import '../../../../../utlis/app_colors .dart';
 import '../../../../../utlis/app_text .dart';
                                                     /// verses in containers
-class FirstFormSoraScreen extends StatelessWidget{
+class FirstFormSoraScreen extends StatefulWidget {
   List<String> verses;
    var height;
    FirstFormSoraScreen({super.key,required this.verses,required this.height});
 
+  @override
+  State<FirstFormSoraScreen> createState() => _FirstFormSoraScreenState();
+}
 
+class _FirstFormSoraScreenState extends State<FirstFormSoraScreen> {
+  int? selectedIndex;
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(color: Colors.transparent,
-        child: ListView.builder(
-          padding: EdgeInsets.only(
-              top: height*0.01
-          ),itemBuilder: (context, index) {
-          return Container(
+      child: ListView.builder(
+        padding: EdgeInsets.only(
+            top: widget.height * 0.01
+        ), itemBuilder: (context, index) {
+        var isSelected = selectedIndex == index;
+        return InkWell(
+          onTap: () {
+            setState(() {
+              selectedIndex == index ? selectedIndex = null : selectedIndex =
+                  index;
+            });
+          },
+          child: Container(
+
               padding:  EdgeInsets.symmetric(
-                  vertical: height*0.025),
-              margin: EdgeInsets.only(bottom: height*0.01
+                  vertical: widget.height * 0.025),
+              margin: EdgeInsets.only(bottom: widget.height * 0.01
               ),
-              decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(16)
+              decoration: BoxDecoration(
+                  color: selectedIndex == index ? AppColors.goldColor : null,
+                  borderRadius: BorderRadius.all(Radius.circular(16)
               ),
                   border: Border.all(color: AppColors.goldColor,width: 2)
               ),
               child: Text(
-                "${verses[index]} " ,style: AppTextStyle.bold20Gold,textDirection:TextDirection.rtl ,textAlign: TextAlign.center,
+                "${widget.verses[index]}", style: selectedIndex == index
+                  ? AppTextStyle.bold20Black
+                  : AppTextStyle.bold20Gold,
+                textDirection: TextDirection.rtl,
+                textAlign: TextAlign.center,
               )
-          );
-        },
-          itemCount: verses.length,shrinkWrap: true,),
-      ),
+          ),
+        );
+      },
+        itemCount: widget.verses.length, shrinkWrap: true,),
     );
   }
 }

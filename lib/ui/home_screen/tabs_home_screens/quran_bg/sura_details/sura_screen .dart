@@ -60,7 +60,7 @@ class _SuraScreenState extends State<SuraScreen> {
         List<String> suraLines = fileContent.split('\n');
         verses = suraLines;
         for(int i=0 ;i<suraLines.length;i++){
-          suraLines[i] += "[${i+1}]  ";
+          suraLines[i] += "[${i + 1}] ";
         }
         connectVerses=suraLines.join();
         setState(() {
