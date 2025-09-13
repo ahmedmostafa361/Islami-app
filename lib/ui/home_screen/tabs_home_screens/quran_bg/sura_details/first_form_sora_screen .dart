@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../utlis/app_colors .dart';
 import '../../../../../utlis/app_text .dart';
                                                     /// verses in containers
 class FirstFormSoraScreen extends StatefulWidget {
-  List<String> verses;
-   var height;
-   FirstFormSoraScreen({super.key,required this.verses,required this.height});
+  final List<String> verses;
+  final double height;
+
+  const FirstFormSoraScreen(
+      {super.key, required this.verses, required this.height});
 
   @override
   State<FirstFormSoraScreen> createState() => _FirstFormSoraScreenState();
@@ -20,7 +23,6 @@ class _FirstFormSoraScreenState extends State<FirstFormSoraScreen> {
         padding: EdgeInsets.only(
             top: widget.height * 0.01
         ), itemBuilder: (context, index) {
-        var isSelected = selectedIndex == index;
         return InkWell(
           onTap: () {
             setState(() {
@@ -41,7 +43,7 @@ class _FirstFormSoraScreenState extends State<FirstFormSoraScreen> {
                   border: Border.all(color: AppColors.goldColor,width: 2)
               ),
               child: Text(
-                "${widget.verses[index]}", style: selectedIndex == index
+                widget.verses[index], style: selectedIndex == index
                   ? AppTextStyle.bold20Black
                   : AppTextStyle.bold20Gold,
                 textDirection: TextDirection.rtl,

@@ -5,6 +5,8 @@ import 'package:islami_app_flutter/utlis/app_colors%20.dart';
 class AppTextStyle  {
 
   static final TextStyle bold16White = GoogleFonts.elMessiri(color: AppColors.whiteColor,fontSize: 16,fontWeight: FontWeight.bold);
+  static final TextStyle bold16black = GoogleFonts.elMessiri(
+      color: AppColors.blackColor, fontSize: 16, fontWeight: FontWeight.bold);
   static final TextStyle bold20White = GoogleFonts.elMessiri(color: AppColors.whiteColor,fontSize: 20,fontWeight: FontWeight.bold);
   static final TextStyle bold20Black = GoogleFonts.elMessiri(color: AppColors.blackColor,fontSize: 20,fontWeight: FontWeight.bold);
   static final TextStyle bold20Gold = GoogleFonts.elMessiri(color: AppColors.goldColor,fontSize: 20,fontWeight: FontWeight.bold);
