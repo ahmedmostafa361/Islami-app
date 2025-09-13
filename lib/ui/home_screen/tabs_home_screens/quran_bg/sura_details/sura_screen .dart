@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app_flutter/providers/most_recent_provider%20.dart';
 import 'package:islami_app_flutter/ui/home_screen/tabs_home_screens/quran_bg/sura_details/first_form_sora_screen%20.dart';
 import 'package:islami_app_flutter/ui/home_screen/tabs_home_screens/quran_bg/sura_details/second_form_sora_screen%20.dart';
 import 'package:islami_app_flutter/ui/home_screen/tabs_home_screens/quran_bg/sura_details/suras_details%20.dart';
@@ -15,6 +16,12 @@ class _SuraScreenState extends State<SuraScreen> {
   List<String> verses =[];
    String connectVerses='';
    bool show =true;
+  late MostRecentProvider mostRecentProvider;
+
+  void dispose() {
+    super.dispose();
+    mostRecentProvider.mostRecentList;
+  }
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
