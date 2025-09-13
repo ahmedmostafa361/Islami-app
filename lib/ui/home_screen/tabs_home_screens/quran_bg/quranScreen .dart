@@ -31,7 +31,6 @@ class _QuranscreenState extends State<Quranscreen> {
     },);
   }
 
-
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery
