@@ -23,5 +23,6 @@ class AppAssets {
   static const String prayTime = 'assets/images/prayTime.png';
   static const String bell1 = 'assets/images/bell1.png';
   static const String bell2 = 'assets/images/bell2.png';
+  static const String radio = 'assets/images/radio.png';
 }
 // quran Hadeth Sebha Radio Time
