@@ -19,7 +19,6 @@ class AppAssets {
   static const String imgRecent = 'assets/images/fanos.png';
   static const String starImage = 'assets/images/star.png';
   static const String suraBg = 'assets/images/surabg.png';
-
-
+  static const String sebha1 = 'assets/images/sebha1.png';
 }
 // quran Hadeth Sebha Radio Time
