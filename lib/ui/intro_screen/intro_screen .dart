@@ -3,6 +3,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_app_flutter/utlis/app_assets%20.dart';
 import 'package:islami_app_flutter/utlis/app_colors%20.dart';
 import 'package:islami_app_flutter/utlis/app_routes%20.dart';
+import 'package:islami_app_flutter/utlis/app_text%20.dart';
 class IntroScreen extends StatelessWidget  {
 
   @override
@@ -50,19 +51,15 @@ class IntroScreen extends StatelessWidget  {
       bodyWidget: Column(
             mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Padding(
-          //   padding: const EdgeInsets.only(bottom: 16),
-          //   child: Image(image: AssetImage(AppAssets.islamiLogo),height: 171,width: 291,),
-          // ),
           Padding(
             padding: const EdgeInsets.only(left: 16,right: 16,top: 170 ),
             child: Image(image: AssetImage(img2),height: 300,width: 372,),
           ),
           SizedBox(height: paddingText,),
-          Text(text,style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: AppColors.goldColor),),
+          Text(text, style: AppTextStyle.bold24Gold,),
           SizedBox(height: 25,),
-          Text(text2,textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: AppColors.goldColor),)
-
+          Text(
+            text2, textAlign: TextAlign.center, style: AppTextStyle.bold20Gold,)
         ],
       ),
       titleWidget: SizedBox.shrink(),
